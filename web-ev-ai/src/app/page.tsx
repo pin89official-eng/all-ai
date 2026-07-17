@@ -7,6 +7,8 @@ import WhyUs from "@/components/WhyUs";
 import Process from "@/components/Process";
 import CtaBanner from "@/components/CtaBanner";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
+import StickyContact from "@/components/StickyContact";
 
 export default function Home() {
   return (
@@ -22,6 +24,8 @@ export default function Home() {
         <CtaBanner />
       </main>
       <Footer />
+      <BackToTop />
+      <StickyContact />
     </>
   );
 }

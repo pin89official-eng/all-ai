@@ -1,12 +1,15 @@
+import Reveal from "./Reveal";
+import Counter from "./Counter";
+
 const HIGHLIGHTS = [
   {
     title: "ประสบการณ์เหนือระดับ",
-    value: "200+ กม.",
+    value: <Counter target={200} prefix="" suffix="+ กม." />,
     desc: "ชาร์จเพียง 5 นาที*",
   },
   {
     title: "คุณภาพเหนือชั้น",
-    value: "10 ปี",
+    value: <Counter target={10} suffix=" ปี" />,
     desc: "อายุการใช้งาน*",
   },
   {
@@ -41,46 +44,52 @@ export default function Showcase() {
     <section className="border-b border-black/5 px-5 py-16 sm:px-8 sm:py-20">
       <div className="mx-auto max-w-6xl">
         {/* banner video */}
-        <div className="overflow-hidden rounded-3xl">
-          <video
-            className="aspect-video w-full object-cover"
-            muted
-            autoPlay
-            loop
-            playsInline
-            poster="https://digitalpower.huawei.com/admin/asset/v1/pro/view/17698018a83540a79e1fad1d3ddf657c.jpg"
-          >
-            <source
-              src="https://digitalpower.huawei.com/admin/asset/v1/pro/view/77b2644e666641f5868371f57c654cf3.mp4"
-              type="video/mp4"
-            />
-          </video>
-        </div>
+        <Reveal>
+          <div className="overflow-hidden rounded-3xl">
+            <video
+              className="aspect-video w-full object-cover"
+              muted
+              autoPlay
+              loop
+              playsInline
+              poster="https://digitalpower.huawei.com/admin/asset/v1/pro/view/17698018a83540a79e1fad1d3ddf657c.jpg"
+            >
+              <source
+                src="https://digitalpower.huawei.com/admin/asset/v1/pro/view/77b2644e666641f5868371f57c654cf3.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+        </Reveal>
 
         {/* highlight stats */}
         <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-black/5 bg-black/5 lg:grid-cols-4">
-          {HIGHLIGHTS.map((h) => (
-            <div key={h.title} className="bg-white px-5 py-6 text-center sm:text-left">
-              <div className="text-xs font-semibold uppercase tracking-wide text-brand-red">
-                {h.title}
+          {HIGHLIGHTS.map((h, i) => (
+            <Reveal key={h.title} delay={i * 100} className="bg-white">
+              <div className="group h-full px-5 py-6 text-center transition-colors hover:bg-brand-red/[0.03] sm:text-left">
+                <div className="text-xs font-semibold uppercase tracking-wide text-brand-red">
+                  {h.title}
+                </div>
+                <div className="mt-2 text-2xl font-extrabold text-zinc-900 transition-transform duration-300 group-hover:scale-105 sm:text-3xl">
+                  {h.value}
+                </div>
+                <div className="mt-1 text-xs text-zinc-500">{h.desc}</div>
               </div>
-              <div className="mt-2 text-2xl font-extrabold text-zinc-900 sm:text-3xl">
-                {h.value}
-              </div>
-              <div className="mt-1 text-xs text-zinc-500">{h.desc}</div>
-            </div>
+            </Reveal>
           ))}
         </div>
 
         {/* video slides */}
         <div className="mt-10 grid gap-5 sm:grid-cols-2">
-          {VIDEO_SLIDES.map((v) => (
-            <div key={v.src} className="overflow-hidden rounded-2xl border border-black/5">
-              <video className="aspect-video w-full object-cover" controls poster={v.poster}>
-                <source src={v.src} type="video/mp4" />
-              </video>
-              <div className="bg-white px-4 py-3 text-xs text-zinc-500">{v.caption}</div>
-            </div>
+          {VIDEO_SLIDES.map((v, i) => (
+            <Reveal key={v.src} delay={i * 120}>
+              <div className="overflow-hidden rounded-2xl border border-black/5 transition-shadow hover:shadow-lg">
+                <video className="aspect-video w-full object-cover" controls poster={v.poster}>
+                  <source src={v.src} type="video/mp4" />
+                </video>
+                <div className="bg-white px-4 py-3 text-xs text-zinc-500">{v.caption}</div>
+              </div>
+            </Reveal>
           ))}
         </div>
 

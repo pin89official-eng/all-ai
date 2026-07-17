@@ -1,4 +1,5 @@
 import { ClipboardList, Compass, HardHat, Headset, LineChart, Wrench } from "lucide-react";
+import Reveal from "./Reveal";
 
 const SERVICES = [
   {
@@ -37,7 +38,7 @@ export default function Services() {
   return (
     <section id="services" className="border-b border-black/5 bg-surface px-5 py-20 sm:px-8 sm:py-28">
       <div className="mx-auto max-w-6xl">
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-red">
             บริการของเรา
           </span>
@@ -48,23 +49,22 @@ export default function Services() {
             ตั้งแต่สำรวจหน้างานจนถึงบริการหลังการขาย
             ให้ P.INNOVATION89 ดูแลสถานีชาร์จของคุณแบบครบวงจร
           </p>
-        </div>
+        </Reveal>
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {SERVICES.map((s, i) => (
-            <div
-              key={s.title}
-              className="relative rounded-2xl border border-black/8 bg-white p-6"
-            >
-              <span className="absolute right-6 top-6 text-2xl font-extrabold text-black/5">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-red/10 text-brand-red">
-                <s.icon size={22} />
+            <Reveal key={s.title} delay={i * 80}>
+              <div className="group relative h-full rounded-2xl border border-black/8 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand-red/25 hover:shadow-lg">
+                <span className="absolute right-6 top-6 text-2xl font-extrabold text-black/5">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-red/10 text-brand-red transition-transform duration-300 group-hover:scale-110">
+                  <s.icon size={22} />
+                </div>
+                <h3 className="mt-4 text-base font-semibold text-zinc-900">{s.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-600">{s.desc}</p>
               </div>
-              <h3 className="mt-4 text-base font-semibold text-zinc-900">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-600">{s.desc}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

@@ -1,4 +1,5 @@
 import { Droplets, Gauge, ShieldCheck, Network, Volume2, BadgeCheck } from "lucide-react";
+import Reveal from "./Reveal";
 
 const FEATURES = [
   {
@@ -63,7 +64,7 @@ export default function ProductSpotlight() {
   return (
     <section id="product" className="border-b border-black/5 px-5 py-20 sm:px-8 sm:py-28">
       <div className="mx-auto max-w-6xl">
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-red">
             หัวใจของสถานีชาร์จ
           </span>
@@ -77,49 +78,49 @@ export default function ProductSpotlight() {
             ให้ประสิทธิภาพ เสถียรภาพ และความปลอดภัยสูงสุด
             เหมาะสำหรับสถานีชาร์จเชิงพาณิชย์ที่ต้องการรองรับผู้ใช้จำนวนมากในเวลาอันสั้น
           </p>
-        </div>
+        </Reveal>
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {FEATURES.map((f) => (
-            <div
-              key={f.title}
-              className="group rounded-2xl border border-black/8 bg-surface p-6 transition-colors hover:border-brand-red/30 hover:bg-brand-red/[0.03]"
-            >
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-red/10 text-brand-red">
-                <f.icon size={22} />
+          {FEATURES.map((f, i) => (
+            <Reveal key={f.title} delay={i * 80}>
+              <div className="group h-full rounded-2xl border border-black/8 bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand-red/30 hover:bg-brand-red/[0.03] hover:shadow-lg">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-red/10 text-brand-red transition-transform duration-300 group-hover:scale-110">
+                  <f.icon size={22} />
+                </div>
+                <h3 className="mt-4 text-base font-semibold text-zinc-900">{f.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-600">{f.desc}</p>
               </div>
-              <h3 className="mt-4 text-base font-semibold text-zinc-900">{f.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-600">{f.desc}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
 
         {/* spec table */}
         <div className="mt-16 grid gap-6 lg:grid-cols-2">
-          {SPEC_GROUPS.map((group) => (
-            <div
-              key={group.title}
-              className="overflow-hidden rounded-2xl border border-black/8"
-            >
-              <div className="border-b border-black/8 bg-surface px-5 py-3.5">
-                <h3 className="text-sm font-semibold text-zinc-900">{group.title}</h3>
+          {SPEC_GROUPS.map((group, gi) => (
+            <Reveal key={group.title} delay={gi * 120}>
+              <div className="overflow-hidden rounded-2xl border border-black/8">
+                <div className="border-b border-black/8 bg-surface px-5 py-3.5">
+                  <h3 className="text-sm font-semibold text-zinc-900">{group.title}</h3>
+                </div>
+                <table className="w-full text-sm">
+                  <tbody>
+                    {group.rows.map(([label, value], i) => (
+                      <tr
+                        key={label}
+                        className={`transition-colors hover:bg-brand-red/[0.03] ${
+                          i % 2 === 0 ? "bg-transparent" : "bg-surface"
+                        }`}
+                      >
+                        <td className="px-5 py-3 text-zinc-500">{label}</td>
+                        <td className="px-5 py-3 text-right font-medium text-zinc-900">
+                          {value}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
-              <table className="w-full text-sm">
-                <tbody>
-                  {group.rows.map(([label, value], i) => (
-                    <tr
-                      key={label}
-                      className={i % 2 === 0 ? "bg-transparent" : "bg-surface"}
-                    >
-                      <td className="px-5 py-3 text-zinc-500">{label}</td>
-                      <td className="px-5 py-3 text-right font-medium text-zinc-900">
-                        {value}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+            </Reveal>
           ))}
         </div>
 

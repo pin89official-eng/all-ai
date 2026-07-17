@@ -1,4 +1,5 @@
 import { CheckCircle2, TrendingUp } from "lucide-react";
+import Reveal from "./Reveal";
 
 const REASONS = [
   "ทีมงานเชี่ยวชาญด้านระบบไฟฟ้าและสถานีชาร์จ EV โดยเฉพาะ",
@@ -13,7 +14,7 @@ export default function WhyUs() {
   return (
     <section id="why-us" className="border-b border-black/5 px-5 py-20 sm:px-8 sm:py-28">
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:items-center">
-        <div>
+        <Reveal>
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-red">
             ทำไมต้อง P.INNOVATION89
           </span>
@@ -29,8 +30,12 @@ export default function WhyUs() {
           </p>
 
           <ul className="mt-8 space-y-3.5">
-            {REASONS.map((reason) => (
-              <li key={reason} className="flex items-start gap-3">
+            {REASONS.map((reason, i) => (
+              <li
+                key={reason}
+                className="flex translate-x-0 items-start gap-3 transition-transform duration-200 hover:translate-x-1"
+                style={{ transitionDelay: `${i * 30}ms` }}
+              >
                 <CheckCircle2 size={20} className="mt-0.5 shrink-0 text-brand-red" />
                 <span className="text-sm leading-relaxed text-zinc-700 sm:text-base">
                   {reason}
@@ -38,30 +43,32 @@ export default function WhyUs() {
               </li>
             ))}
           </ul>
-        </div>
+        </Reveal>
 
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#1a0000] to-[#3a0000] p-8 sm:p-10">
-          <div className="pointer-events-none absolute -right-10 -top-10 h-48 w-48 rounded-full bg-brand-gold/15 blur-3xl" />
-          <TrendingUp size={32} className="text-brand-gold" />
-          <h3 className="mt-5 text-2xl font-bold text-white">
-            ลงทุนวันนี้ คืนทุนเร็ว
-            <br />
-            <span className="text-brand-gold">โอกาสทองที่ไม่ควรพลาด</span>
-          </h3>
-          <p className="mt-4 text-sm leading-relaxed text-zinc-300">
-            ยิ่งเปิดให้บริการเร็ว ยิ่งจับจองกลุ่มผู้ใช้รถ EV
-            ในพื้นที่ได้ก่อนคู่แข่ง ปรึกษาทีมงานเพื่อประเมินทำเลและวางแผนการลงทุนที่เหมาะกับคุณ
-            ฟรี ไม่มีค่าใช้จ่าย
-          </p>
-          <a
-            href="https://line.me/ti/p/@pin89"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-7 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-brand-gold to-amber-500 px-6 py-3 text-sm font-bold text-[#1a0000] transition-transform hover:scale-105"
-          >
-            ขอคำปรึกษาการลงทุน
-          </a>
-        </div>
+        <Reveal delay={150}>
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#1a0000] to-[#3a0000] p-8 transition-transform duration-300 hover:-translate-y-1 sm:p-10">
+            <div className="pointer-events-none absolute -right-10 -top-10 h-48 w-48 rounded-full bg-brand-gold/15 blur-3xl" />
+            <TrendingUp size={32} className="text-brand-gold" />
+            <h3 className="mt-5 text-2xl font-bold text-white">
+              ลงทุนวันนี้ คืนทุนเร็ว
+              <br />
+              <span className="text-brand-gold">โอกาสทองที่ไม่ควรพลาด</span>
+            </h3>
+            <p className="mt-4 text-sm leading-relaxed text-zinc-300">
+              ยิ่งเปิดให้บริการเร็ว ยิ่งจับจองกลุ่มผู้ใช้รถ EV
+              ในพื้นที่ได้ก่อนคู่แข่ง ปรึกษาทีมงานเพื่อประเมินทำเลและวางแผนการลงทุนที่เหมาะกับคุณ
+              ฟรี ไม่มีค่าใช้จ่าย
+            </p>
+            <a
+              href="https://line.me/ti/p/@pin89"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-7 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-brand-gold to-amber-500 px-6 py-3 text-sm font-bold text-[#1a0000] transition-transform hover:scale-105 active:scale-95"
+            >
+              ขอคำปรึกษาการลงทุน
+            </a>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
