@@ -8,10 +8,26 @@ import BackToTop from "@/components/BackToTop";
 import StickyContact from "@/components/StickyContact";
 import Reveal from "@/components/Reveal";
 
+const TITLE = "Huawei FusionCharge 720kW Fully Liquid-Cooled | P.INNOVATION89";
+const DESCRIPTION =
+  "รายละเอียดเต็มรูปแบบของเครื่องชาร์จ Huawei FusionCharge Fully Liquid-Cooled Ultra-Fast 720kW ที่ P.INNOVATION89 ใช้ติดตั้งในสถานีชาร์จ EV ทั่วภาคอีสาน";
+
 export const metadata: Metadata = {
-  title: "Huawei FusionCharge 720kW Fully Liquid-Cooled | P.INNOVATION89",
-  description:
-    "รายละเอียดเต็มรูปแบบของเครื่องชาร์จ Huawei FusionCharge Fully Liquid-Cooled Ultra-Fast 720kW ที่ P.INNOVATION89 ใช้ติดตั้งในสถานีชาร์จ EV ทั่วภาคอีสาน",
+  title: TITLE,
+  description: DESCRIPTION,
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [{ url: "/huawei/hero-poster.jpg", width: 1920, height: 1080 }],
+    locale: "th_TH",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/huawei/hero-poster.jpg"],
+  },
 };
 
 export default function FusionChargePage() {
