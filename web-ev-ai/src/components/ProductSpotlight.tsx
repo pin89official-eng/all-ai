@@ -61,18 +61,18 @@ const SPEC_GROUPS = [
 
 export default function ProductSpotlight() {
   return (
-    <section id="product" className="border-b border-white/5 px-5 py-20 sm:px-8 sm:py-28">
+    <section id="product" className="border-b border-black/5 px-5 py-20 sm:px-8 sm:py-28">
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-cyan">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-red">
             หัวใจของสถานีชาร์จ
           </span>
-          <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-bold text-zinc-900 sm:text-4xl">
             Huawei FusionCharge
             <br />
             <span className="text-gradient">Fully Liquid-Cooled Ultra-Fast 720kW</span>
           </h2>
-          <p className="mt-4 text-sm leading-relaxed text-zinc-400 sm:text-base">
+          <p className="mt-4 text-sm leading-relaxed text-zinc-600 sm:text-base">
             เทคโนโลยีชาร์จเร็วระดับแนวหน้า ระบายความร้อนด้วยของเหลวเต็มระบบ
             ให้ประสิทธิภาพ เสถียรภาพ และความปลอดภัยสูงสุด
             เหมาะสำหรับสถานีชาร์จเชิงพาณิชย์ที่ต้องการรองรับผู้ใช้จำนวนมากในเวลาอันสั้น
@@ -83,13 +83,13 @@ export default function ProductSpotlight() {
           {FEATURES.map((f) => (
             <div
               key={f.title}
-              className="group rounded-2xl border border-white/8 bg-white/[0.03] p-6 transition-colors hover:border-brand-green/30 hover:bg-white/[0.05]"
+              className="group rounded-2xl border border-black/8 bg-surface p-6 transition-colors hover:border-brand-red/30 hover:bg-brand-red/[0.03]"
             >
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-brand-green/15 to-brand-cyan/15 text-brand-green">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-red/10 text-brand-red">
                 <f.icon size={22} />
               </div>
-              <h3 className="mt-4 text-base font-semibold text-white">{f.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-400">{f.desc}</p>
+              <h3 className="mt-4 text-base font-semibold text-zinc-900">{f.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-600">{f.desc}</p>
             </div>
           ))}
         </div>
@@ -99,20 +99,20 @@ export default function ProductSpotlight() {
           {SPEC_GROUPS.map((group) => (
             <div
               key={group.title}
-              className="overflow-hidden rounded-2xl border border-white/8 bg-white/[0.02]"
+              className="overflow-hidden rounded-2xl border border-black/8"
             >
-              <div className="border-b border-white/8 bg-white/[0.03] px-5 py-3.5">
-                <h3 className="text-sm font-semibold text-white">{group.title}</h3>
+              <div className="border-b border-black/8 bg-surface px-5 py-3.5">
+                <h3 className="text-sm font-semibold text-zinc-900">{group.title}</h3>
               </div>
               <table className="w-full text-sm">
                 <tbody>
                   {group.rows.map(([label, value], i) => (
                     <tr
                       key={label}
-                      className={i % 2 === 0 ? "bg-transparent" : "bg-white/[0.015]"}
+                      className={i % 2 === 0 ? "bg-transparent" : "bg-surface"}
                     >
-                      <td className="px-5 py-3 text-zinc-400">{label}</td>
-                      <td className="px-5 py-3 text-right font-medium text-white">
+                      <td className="px-5 py-3 text-zinc-500">{label}</td>
+                      <td className="px-5 py-3 text-right font-medium text-zinc-900">
                         {value}
                       </td>
                     </tr>
@@ -123,7 +123,7 @@ export default function ProductSpotlight() {
           ))}
         </div>
 
-        <p className="mx-auto mt-8 max-w-2xl text-center text-[11px] text-zinc-600">
+        <p className="mx-auto mt-8 max-w-2xl text-center text-[11px] text-zinc-400">
           ข้อมูลจำเพาะอ้างอิงจากเอกสาร &quot;Huawei FusionCharge Fully Liquid-Cooled
           Ultra-Fast Charging&quot; โดย Huawei Digital Power (2024) และ
           digitalpower.huawei.com/en/smart-charging-network/ultra-fast-charging

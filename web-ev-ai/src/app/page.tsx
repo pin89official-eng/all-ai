@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Showcase from "@/components/Showcase";
 import ProductSpotlight from "@/components/ProductSpotlight";
 import Services from "@/components/Services";
 import WhyUs from "@/components/WhyUs";
@@ -13,6 +14,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <Showcase />
         <ProductSpotlight />
         <Services />
         <WhyUs />

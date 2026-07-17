@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="th" className={`${prompt.variable} antialiased`}>
-      <body className="bg-[#05070a] text-zinc-100">{children}</body>
+      <body className="bg-white text-zinc-900">{children}</body>
     </html>
   );
 }

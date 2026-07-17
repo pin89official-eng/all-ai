@@ -1,18 +1,26 @@
 @import "tailwindcss";
 
 :root {
-  --background: #05070a;
-  --foreground: #f4f6f8;
-  --brand-green: #22e08a;
-  --brand-cyan: #2dd4f5;
-  --brand-gold: #f5b942;
+  --background: #ffffff;
+  --surface: #f7f7f8;
+  --foreground: #191919;
+  --muted: #666666;
+  --subtle: #999999;
+  --border: #e5e5e5;
+  --brand-red: #c7000b;
+  --brand-red-dark: #8a0000;
+  --brand-gold: #b8860b;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
   --color-foreground: var(--foreground);
-  --color-brand-green: var(--brand-green);
-  --color-brand-cyan: var(--brand-cyan);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-border: var(--border);
+  --color-brand-red: var(--brand-red);
+  --color-brand-red-dark: var(--brand-red-dark);
   --color-brand-gold: var(--brand-gold);
   --font-sans: var(--font-prompt);
 }
@@ -28,12 +36,12 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(90deg, var(--brand-green), var(--brand-cyan));
+  background: linear-gradient(90deg, var(--brand-red), var(--brand-red-dark));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 .glow-border {
-  box-shadow: 0 0 0 1px rgba(34, 224, 138, 0.15), 0 0 40px -12px rgba(45, 212, 245, 0.35);
+  box-shadow: 0 0 0 1px rgba(199, 0, 11, 0.12), 0 12px 30px -14px rgba(199, 0, 11, 0.25);
 }

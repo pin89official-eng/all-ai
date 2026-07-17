@@ -13,12 +13,12 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="flex flex-col items-center gap-3 text-sm text-zinc-400 sm:items-start">
+        <div className="flex flex-col items-center gap-3 text-sm text-zinc-600 sm:items-start">
           <a
             href="https://line.me/ti/p/@pin89"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 transition-colors hover:text-brand-cyan"
+            className="flex items-center gap-2 transition-colors hover:text-brand-red"
           >
             <MessageCircle size={16} />
             LINE: @pin89
@@ -30,7 +30,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mx-auto mt-10 max-w-6xl border-t border-white/5 pt-6 text-center text-xs text-zinc-600">
+      <div className="mx-auto mt-10 max-w-6xl border-t border-black/5 pt-6 text-center text-xs text-zinc-400">
         © {new Date().getFullYear()} P.INNOVATION89. All rights reserved.
       </div>
     </footer>

@@ -6,30 +6,29 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden border-b border-white/5 px-5 pt-16 pb-20 sm:px-8 sm:pt-24 sm:pb-28"
+      className="relative overflow-hidden border-b border-black/5 bg-surface px-5 pt-16 pb-16 sm:px-8 sm:pt-24 sm:pb-20"
     >
       {/* background glow */}
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-40 left-1/2 h-[520px] w-[720px] -translate-x-1/2 rounded-full bg-brand-green/10 blur-[120px]" />
-        <div className="absolute top-20 right-0 h-[360px] w-[480px] rounded-full bg-brand-cyan/10 blur-[110px]" />
+        <div className="absolute -top-40 left-1/2 h-[520px] w-[720px] -translate-x-1/2 rounded-full bg-brand-red/5 blur-[120px]" />
       </div>
 
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-brand-green/30 bg-brand-green/5 px-4 py-1.5 text-xs font-medium text-brand-green">
+          <span className="inline-flex items-center gap-2 rounded-full border border-brand-red/25 bg-brand-red/5 px-4 py-1.5 text-xs font-medium text-brand-red">
             <Zap size={14} />
             รับสร้างสถานีชาร์จ EV ครบวงจร · ภาคอีสาน
           </span>
 
-          <h1 className="mt-6 text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl">
+          <h1 className="mt-6 text-4xl font-extrabold leading-tight tracking-tight text-zinc-900 sm:text-5xl md:text-6xl">
             ลงทุนวันนี้ <span className="text-gradient">คืนทุนเร็ว</span>
             <br />
             โอกาสทองที่ไม่ควรพลาด
           </h1>
 
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-600 sm:text-lg">
             P.INNOVATION89 ผู้เชี่ยวชาญด้านสถานีชาร์จรถยนต์ไฟฟ้า ใช้เครื่องชาร์จ{" "}
-            <span className="font-semibold text-white">
+            <span className="font-semibold text-zinc-900">
               Huawei FusionCharge Fully Liquid-Cooled Ultra-Fast 720kW
             </span>{" "}
             ระบบระบายความร้อนด้วยของเหลวเต็มรูปแบบ ชาร์จเร็วที่สุดในตลาด
@@ -41,46 +40,20 @@ export default function Hero() {
               href={LINE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand-green to-brand-cyan px-7 py-3.5 text-sm font-bold text-[#05070a] shadow-lg shadow-brand-green/20 transition-transform hover:scale-105"
+              className="flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand-red to-brand-red-dark px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-brand-red/20 transition-transform hover:scale-105"
             >
               <MessageCircle size={18} />
               ปรึกษาฟรีทาง LINE @pin89
             </a>
             <a
               href="#product"
-              className="flex items-center justify-center gap-2 rounded-full border border-white/15 px-7 py-3.5 text-sm font-semibold text-zinc-200 transition-colors hover:border-brand-cyan/50 hover:text-brand-cyan"
+              className="flex items-center justify-center gap-2 rounded-full border border-black/10 px-7 py-3.5 text-sm font-semibold text-zinc-700 transition-colors hover:border-brand-red/40 hover:text-brand-red"
             >
               ดูสเปกเครื่องชาร์จ
               <ArrowRight size={16} />
             </a>
           </div>
         </div>
-
-        {/* quick stats */}
-        <div className="mx-auto mt-16 grid max-w-4xl grid-cols-2 gap-4 sm:grid-cols-4">
-          {[
-            { value: "720kW", label: "กำลังไฟสูงสุด (DC/DC)" },
-            { value: "200+ กม.", label: "ระยะทางที่ชาร์จได้ใน 5 นาที*" },
-            { value: "96%*", label: "ประสิทธิภาพสูงสุด" },
-            { value: "ภาคอีสาน", label: "พื้นที่ให้บริการ" },
-          ].map((stat) => (
-            <div
-              key={stat.label}
-              className="glow-border rounded-2xl bg-white/[0.03] px-4 py-5 text-center backdrop-blur-sm"
-            >
-              <div className="text-lg font-bold text-white sm:text-xl">
-                {stat.value}
-              </div>
-              <div className="mt-1 text-xs text-zinc-400">{stat.label}</div>
-            </div>
-          ))}
-        </div>
-        <p className="mt-3 text-center text-[11px] text-zinc-600">
-          *ตัวเลขระยะทาง/ประสิทธิภาพเป็นค่าทางทฤษฎีจากห้องปฏิบัติการของ Huawei
-          ภายใต้เงื่อนไขเฉพาะ ผลจริงขึ้นอยู่กับรุ่นรถและสภาพการใช้งาน
-          อ้างอิงจาก digitalpower.huawei.com และเอกสาร Huawei FusionCharge
-          Fully Liquid-Cooled Ultra-Fast Charging
-        </p>
       </div>
     </section>
   );

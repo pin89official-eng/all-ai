@@ -35,16 +35,16 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <section id="services" className="border-b border-white/5 bg-white/[0.015] px-5 py-20 sm:px-8 sm:py-28">
+    <section id="services" className="border-b border-black/5 bg-surface px-5 py-20 sm:px-8 sm:py-28">
       <div className="mx-auto max-w-6xl">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-cyan">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-red">
             บริการของเรา
           </span>
-          <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-bold text-zinc-900 sm:text-4xl">
             ครบทุกขั้นตอน <span className="text-gradient">จบในที่เดียว</span>
           </h2>
-          <p className="mt-4 text-sm leading-relaxed text-zinc-400 sm:text-base">
+          <p className="mt-4 text-sm leading-relaxed text-zinc-600 sm:text-base">
             ตั้งแต่สำรวจหน้างานจนถึงบริการหลังการขาย
             ให้ P.INNOVATION89 ดูแลสถานีชาร์จของคุณแบบครบวงจร
           </p>
@@ -54,16 +54,16 @@ export default function Services() {
           {SERVICES.map((s, i) => (
             <div
               key={s.title}
-              className="relative rounded-2xl border border-white/8 bg-[#05070a] p-6"
+              className="relative rounded-2xl border border-black/8 bg-white p-6"
             >
-              <span className="absolute right-6 top-6 text-2xl font-extrabold text-white/5">
+              <span className="absolute right-6 top-6 text-2xl font-extrabold text-black/5">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-brand-green/15 to-brand-cyan/15 text-brand-cyan">
+              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-red/10 text-brand-red">
                 <s.icon size={22} />
               </div>
-              <h3 className="mt-4 text-base font-semibold text-white">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-400">{s.desc}</p>
+              <h3 className="mt-4 text-base font-semibold text-zinc-900">{s.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-600">{s.desc}</p>
             </div>
           ))}
         </div>
