@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Droplets, Gauge, ShieldCheck, Network, Volume2, BadgeCheck } from "lucide-react";
 import Reveal from "./Reveal";
 
@@ -78,6 +79,10 @@ export default function ProductSpotlight() {
             ให้ประสิทธิภาพ เสถียรภาพ และความปลอดภัยสูงสุด
             เหมาะสำหรับสถานีชาร์จเชิงพาณิชย์ที่ต้องการรองรับผู้ใช้จำนวนมากในเวลาอันสั้น
           </p>
+          <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-black/8 bg-surface px-4 py-2">
+            <span className="text-xs text-zinc-500">ตัวแทนติดตั้งอย่างเป็นทางการของ</span>
+            <Image src="/huawei/huawei-logo.png" alt="Huawei" width={90} height={20} className="h-5 w-auto" />
+          </div>
         </Reveal>
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
