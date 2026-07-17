@@ -4,6 +4,7 @@ import Showcase from "@/components/Showcase";
 import ProductSpotlight from "@/components/ProductSpotlight";
 import Services from "@/components/Services";
 import WhyUs from "@/components/WhyUs";
+import InvestmentOpportunity from "@/components/InvestmentOpportunity";
 import Process from "@/components/Process";
 import CtaBanner from "@/components/CtaBanner";
 import Footer from "@/components/Footer";
@@ -20,6 +21,7 @@ export default function Home() {
         <ProductSpotlight />
         <Services />
         <WhyUs />
+        <InvestmentOpportunity />
         <Process />
         <CtaBanner />
       </main>
