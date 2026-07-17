@@ -59,9 +59,9 @@ export default function Hero() {
         {/* quick stats */}
         <div className="mx-auto mt-16 grid max-w-4xl grid-cols-2 gap-4 sm:grid-cols-4">
           {[
-            { value: "720kW", label: "กำลังชาร์จสูงสุด" },
-            { value: "Liquid-Cooled", label: "ระบายความร้อนของเหลว" },
-            { value: "10-15 นาที", label: "ชาร์จได้ ~80%*" },
+            { value: "720kW", label: "กำลังไฟสูงสุด (DC/DC)" },
+            { value: "480kW", label: "สูงสุดต่อหัวชาร์จ" },
+            { value: "96%*", label: "ประสิทธิภาพสูงสุด" },
             { value: "ภาคอีสาน", label: "พื้นที่ให้บริการ" },
           ].map((stat) => (
             <div
@@ -76,7 +76,8 @@ export default function Hero() {
           ))}
         </div>
         <p className="mt-3 text-center text-[11px] text-zinc-600">
-          *ระยะเวลาชาร์จโดยประมาณ ขึ้นอยู่กับรุ่นรถและสภาพแบตเตอรี่
+          *ค่าประสิทธิภาพสูงสุดจากการทดสอบในห้องปฏิบัติการ อ้างอิงเอกสาร Huawei
+          FusionCharge Fully Liquid-Cooled Ultra-Fast Charging
         </p>
       </div>
     </section>

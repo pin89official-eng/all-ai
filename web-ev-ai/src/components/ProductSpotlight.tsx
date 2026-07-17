@@ -1,35 +1,61 @@
-import { Droplets, Gauge, ShieldCheck, Cable, Volume2, LayoutGrid } from "lucide-react";
+import { Droplets, Gauge, ShieldCheck, Network, Volume2, BadgeCheck } from "lucide-react";
 
 const FEATURES = [
   {
     icon: Gauge,
-    title: "กำลังชาร์จสูงสุด 720kW",
-    desc: "ระบบจ่ายไฟกำลังสูงระดับ Ultra-Fast Charging ลดเวลารอคอยของผู้ใช้รถ EV ได้อย่างมาก",
+    title: "จ่ายไฟสูงสุด 720kW",
+    desc: "พาวเวอร์ยูนิตรุ่น 600kW(AC/DC)+720kW(DC/DC) จ่ายกระแสได้สูงสุด 500A ต่อหัวชาร์จ รองรับสูงสุด 8 หัวชาร์จพร้อมกัน",
   },
   {
     icon: Droplets,
     title: "Fully Liquid-Cooled",
-    desc: "ระบายความร้อนด้วยของเหลวเต็มระบบ ทั้งตัวเครื่องและสายชาร์จ ลดความร้อนสะสม เพิ่มความเสถียรและอายุการใช้งาน",
+    desc: "ระบายความร้อนด้วยของเหลวทั้งพาวเวอร์ยูนิตและสายชาร์จ ประสิทธิภาพสูงสุด 96% ทำงานได้ในช่วงอุณหภูมิ -35°C ถึง +50°C",
   },
   {
-    icon: LayoutGrid,
-    title: "ออกแบบแบบโมดูลาร์",
-    desc: "จัดสรรกำลังไฟแบบยืดหยุ่นให้หลายหัวชาร์จพร้อมกัน รองรับการขยายสถานีในอนาคตได้ง่าย",
+    icon: Network,
+    title: "Power Sharing Matrix + DC Bus",
+    desc: "สถาปัตยกรรม DC Bus จัดสรรกำลังไฟระหว่างหัวชาร์จได้อย่างยืดหยุ่น รองรับเชื่อมต่อระบบโซลาร์และแบตเตอรี่กักเก็บพลังงาน (ESS) ในอนาคต",
   },
   {
     icon: Volume2,
-    title: "เสียงรบกวนต่ำ",
-    desc: "ระบบระบายความร้อนของเหลวช่วยลดเสียงพัดลมเมื่อเทียบกับเครื่องชาร์จระบายความร้อนด้วยอากาศทั่วไป",
-  },
-  {
-    icon: Cable,
-    title: "สายชาร์จบางเบา ใช้งานง่าย",
-    desc: "หัวชาร์จระบายความร้อนด้วยของเหลว ทำให้สายชาร์จมีขนาดเล็กลง จับถือสะดวก ลดความเมื่อยล้าของผู้ใช้",
+    title: "เสียงเงียบ ≤50dB(A)",
+    desc: "หัวจ่ายมีระดับเสียงไม่เกิน 50dB(A) ที่ระยะ 1 เมตร (25°C) เงียบกว่าเครื่องชาร์จระบายความร้อนด้วยอากาศทั่วไป",
   },
   {
     icon: ShieldCheck,
-    title: "มาตรฐานความปลอดภัยสูง",
-    desc: "ระบบตรวจสอบและป้องกันไฟเกิน ลัดวงจร และความร้อนเกิน เพื่อความปลอดภัยของรถและผู้ใช้งาน",
+    title: "อายุการใช้งานยาว 10 ปี*",
+    desc: "อัตราความเสียหายของโมดูลต่ำกว่า 0.5%* พร้อมระบบป้องกันไฟเกิน ลัดวงจร ไฟรั่ว ความร้อนเกิน และตรวจจับการเปิดตู้",
+  },
+  {
+    icon: BadgeCheck,
+    title: "มาตรฐานสากล IP55",
+    desc: "กันฝุ่นกันน้ำระดับ IP55 ผ่านมาตรฐาน IEC 61851, IEC 62196, ISO15118 พร้อมรองรับ OCPP เชื่อมต่อแพลตฟอร์มบริหารจัดการ",
+  },
+];
+
+const SPEC_GROUPS = [
+  {
+    title: "พาวเวอร์ยูนิต (DS720-720LEUA2)",
+    rows: [
+      ["กำลังไฟ (AC/DC + DC/DC)", "600kW + 720kW"],
+      ["ขนาด (กว้าง×ลึก×สูง)", "800 × 1700 × 2150 มม."],
+      ["ประสิทธิภาพ (โหลดเต็ม / สูงสุด)", "94.7% / 96%*"],
+      ["ระบบระบายความร้อน", "Liquid Cooling"],
+      ["ระดับป้องกันฝุ่น/น้ำ", "IP55"],
+      ["จำนวนหัวชาร์จสูงสุด", "12 หัว (สูงสุด 8 × 500A)"],
+      ["เสียงรบกวน", "≤55dB(A) โหมดเงียบ / ≤60dB(A) โหลดเต็ม@1m"],
+    ],
+  },
+  {
+    title: "หัวจ่ายชาร์จ (DT500L1-EUA1 Liquid-Cooled)",
+    rows: [
+      ["กำลังจ่ายสูงสุดต่อหัว", "480kW"],
+      ["กระแสไฟฟ้าออก", "425A ต่อเนื่อง / สูงสุด 500A (30 นาที@25°C)"],
+      ["หัวชาร์จ", "1 × CCS2"],
+      ["ความยาวสายชาร์จ", "≥ 5 เมตร"],
+      ["ระดับป้องกันฝุ่น/น้ำ", "IP55"],
+      ["เสียงรบกวน", "≤50dB(A) @25°C (1m)"],
+    ],
   },
 ];
 
@@ -68,10 +94,39 @@ export default function ProductSpotlight() {
           ))}
         </div>
 
+        {/* spec table */}
+        <div className="mt-16 grid gap-6 lg:grid-cols-2">
+          {SPEC_GROUPS.map((group) => (
+            <div
+              key={group.title}
+              className="overflow-hidden rounded-2xl border border-white/8 bg-white/[0.02]"
+            >
+              <div className="border-b border-white/8 bg-white/[0.03] px-5 py-3.5">
+                <h3 className="text-sm font-semibold text-white">{group.title}</h3>
+              </div>
+              <table className="w-full text-sm">
+                <tbody>
+                  {group.rows.map(([label, value], i) => (
+                    <tr
+                      key={label}
+                      className={i % 2 === 0 ? "bg-transparent" : "bg-white/[0.015]"}
+                    >
+                      <td className="px-5 py-3 text-zinc-400">{label}</td>
+                      <td className="px-5 py-3 text-right font-medium text-white">
+                        {value}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ))}
+        </div>
+
         <p className="mx-auto mt-8 max-w-2xl text-center text-[11px] text-zinc-600">
-          *ข้อมูลจำเพาะอ้างอิงจากผู้ผลิต Huawei FusionCharge
-          รายละเอียดสเปกและรุ่นที่แนะนำอาจแตกต่างกันตามหน้างานจริง
-          สอบถามรายละเอียดเพิ่มเติมได้ทาง LINE
+          ข้อมูลจำเพาะอ้างอิงจากเอกสาร &quot;Huawei FusionCharge Fully Liquid-Cooled
+          Ultra-Fast Charging&quot; โดย Huawei Digital Power (2024) *ค่าประสิทธิภาพและอายุการใช้งานเป็นค่าทางทฤษฎีจากห้องทดลอง
+          รุ่นและสเปกที่แนะนำอาจแตกต่างกันตามหน้างานจริง สอบถามรายละเอียดเพิ่มเติมได้ทาง LINE
         </p>
       </div>
     </section>
