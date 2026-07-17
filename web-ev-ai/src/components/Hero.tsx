@@ -60,7 +60,7 @@ export default function Hero() {
         <div className="mx-auto mt-16 grid max-w-4xl grid-cols-2 gap-4 sm:grid-cols-4">
           {[
             { value: "720kW", label: "กำลังไฟสูงสุด (DC/DC)" },
-            { value: "480kW", label: "สูงสุดต่อหัวชาร์จ" },
+            { value: "200+ กม.", label: "ระยะทางที่ชาร์จได้ใน 5 นาที*" },
             { value: "96%*", label: "ประสิทธิภาพสูงสุด" },
             { value: "ภาคอีสาน", label: "พื้นที่ให้บริการ" },
           ].map((stat) => (
@@ -76,8 +76,10 @@ export default function Hero() {
           ))}
         </div>
         <p className="mt-3 text-center text-[11px] text-zinc-600">
-          *ค่าประสิทธิภาพสูงสุดจากการทดสอบในห้องปฏิบัติการ อ้างอิงเอกสาร Huawei
-          FusionCharge Fully Liquid-Cooled Ultra-Fast Charging
+          *ตัวเลขระยะทาง/ประสิทธิภาพเป็นค่าทางทฤษฎีจากห้องปฏิบัติการของ Huawei
+          ภายใต้เงื่อนไขเฉพาะ ผลจริงขึ้นอยู่กับรุ่นรถและสภาพการใช้งาน
+          อ้างอิงจาก digitalpower.huawei.com และเอกสาร Huawei FusionCharge
+          Fully Liquid-Cooled Ultra-Fast Charging
         </p>
       </div>
     </section>
