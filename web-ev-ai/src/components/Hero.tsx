@@ -54,7 +54,7 @@ export default function Hero() {
                 ปรึกษาฟรีทาง LINE @pin89
               </a>
               <a
-                href="#product"
+                href="/fusioncharge"
                 className="flex items-center justify-center gap-2 rounded-full border border-black/10 px-7 py-3.5 text-sm font-semibold text-zinc-700 transition-colors hover:border-brand-red/40 hover:text-brand-red"
               >
                 ดูสเปกเครื่องชาร์จ

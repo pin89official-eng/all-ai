@@ -7,21 +7,24 @@ import Logo from "./Logo";
 const LINE_URL = "https://line.me/ti/p/@pin89";
 
 const NAV_LINKS = [
-  { href: "#product", label: "เครื่องชาร์จ" },
-  { href: "#services", label: "บริการ" },
-  { href: "#why-us", label: "ทำไมต้องเรา" },
-  { href: "#process", label: "ขั้นตอน" },
-  { href: "#contact", label: "ติดต่อ" },
+  { href: "/fusioncharge", label: "Huawei FusionCharge" },
+  { href: "/#services", label: "บริการ" },
+  { href: "/#why-us", label: "ทำไมต้องเรา" },
+  { href: "/#process", label: "ขั้นตอน" },
+  { href: "/#contact", label: "ติดต่อ" },
 ];
+
+const hashOf = (href: string) => (href.includes("#") ? href.slice(href.indexOf("#")) : null);
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("");
 
   useEffect(() => {
-    const sections = NAV_LINKS.map((link) =>
-      document.querySelector(link.href)
-    ).filter((el): el is Element => !!el);
+    const sections = NAV_LINKS.map((link) => {
+      const hash = hashOf(link.href);
+      return hash ? document.querySelector(hash) : null;
+    }).filter((el): el is Element => !!el);
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -41,7 +44,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-black/5 bg-white/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 sm:px-8">
-        <a href="#top" onClick={() => setOpen(false)}>
+        <a href="/" onClick={() => setOpen(false)}>
           <Logo />
         </a>
 
@@ -51,7 +54,7 @@ export default function Header() {
               key={link.href}
               href={link.href}
               className={`transition-colors hover:text-brand-red ${
-                active === link.href ? "font-semibold text-brand-red" : ""
+                hashOf(link.href) === active ? "font-semibold text-brand-red" : ""
               }`}
             >
               {link.label}
@@ -90,7 +93,7 @@ export default function Header() {
               href={link.href}
               onClick={() => setOpen(false)}
               className={`rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
-                active === link.href
+                hashOf(link.href) === active
                   ? "bg-brand-red/5 text-brand-red"
                   : "text-zinc-700 hover:bg-black/[0.03]"
               }`}
